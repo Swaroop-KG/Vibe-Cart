@@ -1,0 +1,10 @@
+# Root
+node_modules/
+.DS_Store
+Thumbs.db
+.env
+# Frontend
+/frontend/dist/
+/frontend/.vite/
+# Backend
+/backend/.env
