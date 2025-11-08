@@ -122,7 +122,7 @@ Watch a short Loom walkthrough of the project (features, UI, and quick demo):
 
 ![Cart drawer](frontend/public/images/cart.png)
 
-![Checkout receipt](frontend/public/images/checkout.png)
+![Checkout receipt](frontend/public/images/checkoutform.png)
 
 ---
 
