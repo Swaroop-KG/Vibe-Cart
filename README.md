@@ -67,9 +67,9 @@ Visit your app at **[http://localhost:5173](http://localhost:5173)** 🎉
 
 ## ⚙️ Tech Stack
 
-* **Frontend:** React (Vite or CRA)
+* **Frontend:** React (Vite)
 * **Backend:** Node.js + Express
-* **Database:** MongoDB or SQLite (your choice)
+* **Database:** MongoDB 
 * **API Type:** REST
 
 ---
