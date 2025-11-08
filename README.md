@@ -1,169 +1,130 @@
-# 🛒 Vibe Cart - E-Commerce Shopping Cart
+# 💼 Vibe Commerce 
 
-✅ **Project is 100% Complete and Ready to Use!**
+## 🚀 Introduction & Setup Steps
 
-A full-stack shopping cart application with React, Express, and MongoDB featuring smart quantity controls and local product images.
+Follow these steps to set up and run the project locally:
 
-## ✨ Features
+### 1️⃣ Clone the Repository
 
-✅ **Product Display**
-- 10 products with images from `frontend/public/images/`
-- Responsive grid layout
-- Product images, names, prices, and descriptions
-
-✅ **Smart Cart System**
-- Add to cart with one click
-- **Quantity controls (- / + buttons) automatically appear when item is in cart**
-- Real-time cart count in header
-- Persistent cart stored in MongoDB
-
-✅ **Cart Management**
-- Slide-out cart drawer
-- Thumbnail images for each item
-- Adjust quantities with +/- buttons
-- Remove individual items
-- Real-time total calculation
-
-✅ **Checkout**
-- Simple checkout form (name & email)
-- Order confirmation with receipt
-- Mock payment system
-
-Tech
-- Frontend: React (Vite), TailwindCSS
-- Backend: Node, Express, Mongoose
-- DB: MongoDB (Atlas or local)
-
-Monorepo structure
-- /backend – Express API + MongoDB
-- /frontend – React + Tailwind app
-
-## 🚀 Quick Start
-
-### Option 1: Run with Script (Easiest)
-
-```powershell
-cd C:\Users\swaroop\vibe-cart
-.\start.ps1
+```bash
+git clone https://github.com/<your-username>/vibe-cart.git
+cd vibe-cart
 ```
 
-This automatically:
-- Installs dependencies
-- Starts backend (port 5000)
-- Starts frontend (port 5173)
-- Opens browser to http://localhost:5173
+### 2️⃣ Install Dependencies
 
-### Option 2: Manual Start
+#### Backend
 
-**Prerequisites:** Node.js 18+, MongoDB running
-
-**Terminal 1 - Backend:**
-```powershell
+```bash
 cd backend
 npm install
-npm run seed:reset  # Seed database with products
-npm start           # or npm run dev for auto-reload
 ```
 
-**Terminal 2 - Frontend:**
-```powershell
-cd frontend
+#### Frontend
+
+```bash
+cd ../frontend
 npm install
+```
+
+### 3️⃣ Environment Setup
+
+Create a `.env` file inside the **backend** folder with the following variables:
+
+```bash
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/vibe_cart
+CORS_ORIGIN=http://localhost:5173
+```
+
+### 4️⃣ Seed the Database (Optional)
+
+```bash
+npm run seed
+```
+
+This will add sample product data to your MongoDB.
+
+### 5️⃣ Run the Application
+
+#### Run Backend
+
+```bash
+cd backend
 npm run dev
 ```
 
-**Browser:** Open http://localhost:5173
+#### Run Frontend
 
-## 🎯 How It Works
+```bash
+cd ../frontend
+npm run dev
+```
 
-1. **Browse Products** - View all 10 products with images
-2. **Add to Cart** - Click "Add to Cart" button
-3. **Quantity Controls Appear** - Button transforms to **[ - ] [ qty ] [ + ]**
-4. **Adjust Quantity** - Click + to increase, - to decrease
-5. **View Cart** - Click "Cart (N)" in header to open cart drawer
-6. **Checkout** - Enter name/email and complete order
-
-Environment variables (backend/.env)
-- MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/vibe
-- PORT=5000
-- CORS_ORIGIN=http://localhost:5173
-
-## 🖼️ Product Images
-
-All 10 product images are in `frontend/public/images/`:
-
-1. **tee.jpg** - Vibe Tee ($19.99)
-2. **hoodie.jpg** - Vibe Hoodie ($39.99)
-3. **cap.jpg** - Vibe Cap ($14.99)
-4. **bottle.jpg** - Water Bottle ($12.50)
-5. **stickers.jpg** - Sticker Pack ($4.99)
-6. **sneakers.png** - Sneakers ($59.99)
-7. **sunglasses.jpg** - Sunglasses ($24.99)
-8. **watch.jpg** - Wrist Watch ($89.00)
-9. **sleeve.jpg** - Laptop Sleeve ($29.99)
-
-Images are served by backend at: `http://localhost:5000/images/*`
-
-## 📡 API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/health` | Health check |
-| GET | `/api/products` | Get all products |
-| GET | `/api/cart` | Get user's cart |
-| POST | `/api/cart` | Add item to cart |
-| PATCH | `/api/cart` | Update item quantity |
-| DELETE | `/api/cart/:productId` | Remove item |
-| POST | `/api/checkout` | Process checkout |
-| GET | `/images/:filename` | Serve product images |
-
-Notes
-- This app uses a fixed mock user id ("demo-user") to keep state on the server.
-- Seed script inserts sample products when collection is empty.
-
-Scripts
-- backend: npm run dev, npm run seed, npm start
-- frontend: npm run dev, npm run build, npm run preview
-
-## 🐛 Troubleshooting
-
-### Images not showing?
-- Ensure backend is running on port 5000
-- Check images exist in `frontend/public/images/`
-- Verify: `http://localhost:5000/images/tee.jpg`
-
-### Products not loading?
-- Check MongoDB connection in `backend/.env`
-- Run `npm run seed:reset` to re-seed database
-
-### Cart not updating?
-- Verify both servers are running
-- Check browser console for errors
-- Clear browser cache
-
-## 📚 Documentation
-
-- **[SETUP.md](SETUP.md)** - Detailed setup instructions
-- **[FEATURES.md](FEATURES.md)** - Complete feature documentation
-- **[start.ps1](start.ps1)** - Quick start script
-
-## 🎉 Status
-
-✅ **Project is 100% Complete and Ready to Use!**
-
-All features implemented:
-- ✅ Product images from `frontend/public/images/`
-- ✅ Backend serves static images
-- ✅ Smart quantity controls on product cards
-- ✅ Full cart management with +/- buttons
-- ✅ Checkout flow with order confirmation
-- ✅ Database seeded with 10 products
-- ✅ Professional UI/UX
-
-## 📄 License
-
-MIT - Demo project for educational purposes
+Visit your app at **[http://localhost:5173](http://localhost:5173)** 🎉
 
 ---
 
-**Built with ❤️ for Vibe Commerce**
+## ⚙️ Tech Stack
+
+* **Frontend:** React (Vite or CRA)
+* **Backend:** Node.js + Express
+* **Database:** MongoDB or SQLite (your choice)
+* **API Type:** REST
+
+---
+
+## 📡 Backend Requirements
+
+Implement the following REST API endpoints:
+
+| Method     | Endpoint        | Description                                                          |
+| ---------- | --------------- | -------------------------------------------------------------------- |
+| **GET**    | `/api/products` | Return 5–10 mock product items (`id`, `name`, `price`)               |
+| **POST**   | `/api/cart`     | Add product `{ productId, qty }` to cart                             |
+| **DELETE** | `/api/cart/:id` | Remove a product from cart                                           |
+| **GET**    | `/api/cart`     | Get all cart items + total amount                                    |
+| **POST**   | `/api/checkout` | Accept `{ cartItems }` and return a mock receipt (total + timestamp) |
+
+---
+
+## 💻 Frontend Requirements
+
+Build the React frontend with the following pages/features:
+
+* 🛍️ **Product Grid:** Display all products with name, price, and "Add to Cart" button.
+* 🛒 **Cart View:** Show all cart items with quantity, remove/update buttons, and total price.
+* 💳 **Checkout Page:** Simple form (name, email). On submit → show mock receipt modal.
+* 📱 **Responsive Design:** Ensure it looks good on both desktop and mobile.
+
+---
+
+## 📁 Deliverables
+
+Your GitHub repository must include:
+
+```
+/vibe-cart
+├── /backend      # Express API + DB
+├── /frontend     # React app
+└── README.md     # Setup + demo + screenshots
+```
+
+### 🎬 Demo Video
+
+Watch a short Loom walkthrough of the project (features, UI, and quick demo):
+
+[https://www.loom.com/share/1a04e33228064045a80b576596af99b5](https://www.loom.com/share/1a04e33228064045a80b576596af99b5)
+
+### 🖼️ Screenshots
+
+![Hero screenshot](frontend/public/images/products.png)
+
+![Cart drawer](frontend/public/images/cart.png)
+
+![Checkout receipt](frontend/public/images/checkout.png)
+
+---
+
+
+
